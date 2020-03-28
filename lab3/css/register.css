@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    color: #000000;
+    background-color: #f6f6f6;
+}
+
+nav {
+    float: left;
+    margin: auto 3em;
+    padding-left: 100px;
+}
+
+#head{
+    float: right;
+    margin-top: 10px;
+}
+
+header{
+    text-align: center;
+    height: 40px;
+}
+
+#title{
+    margin-left:50px;
+}
+
+#contents{
+    margin: 20px 50px;
+    padding: 20px;
+    background-color: azure;
+}
+a {
+    color: #000000;
+    text-decoration:none;
+}
+
+#back{
+    position: fixed;
+    right: 100px;
+    bottom: 100px;
+}
+
+#back:hover{
+    cursor: grab;
+}

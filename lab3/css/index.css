@@ -1,0 +1,115 @@
+body{
+    background: azure;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+    margin-right: 30px;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+nav h2 a{
+    font-family: "Arial Black", serif;
+    color: rgb(59, 135, 236);
+}
+
+nav a:hover{
+    text-decoration: none;
+    color: plum;
+}
+
+aside{
+    width:15%;
+    float: left;
+}
+
+aside ul{
+    list-style-type: none;
+    font-size: 20px;
+}
+
+aside li {
+    margin-bottom: 30px;
+}
+
+aside li:hover{
+    list-style-type: disc;
+    color: #4ac3f0;
+}
+
+aside a{
+    font-family: "Arial Black", serif;
+    color: #4ac3f0;
+}
+
+aside a:hover{
+    text-decoration: none;
+}
+
+#icon{
+    margin-left: 200px;
+}
+
+#user {
+    color: black;
+    float: right;
+    margin-right: 30px;
+}
+
+#user:hover{
+    color: black;
+    text-decoration: underline;
+}
+
+#content{
+    width:60%;
+    float:left;
+}
+
+#content article{
+    padding: 10px;
+    border: 2px dotted black;
+    border-radius: 15px;
+}
+
+#content article:hover{
+    background: aliceblue;
+    transform: scale(1.1);
+}
+
+#content article h4{
+    color: #4c79dd;
+}
+
+#content article span{
+    color: #4ac3f0;
+    font-size: smaller;
+}
+
+#content article small{
+    font-family: "Baoli TC", serif;
+}
+
+#content article small:hover{
+    text-decoration: underline;
+}
+
+#ads{
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translate(0%, -50%)
+}
+
+#pages{
+    text-align: center;
+}
+
+#pages span{
+    font-weight: bold;
+    font-size: larger;
+}
