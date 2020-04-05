@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Home Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="index.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><img src="images/icon.png" height="50" width="50" alt="icon"></li>
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Browse</a></li>
+                <li><a href="#">Search</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">My account <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Upload</a></li>
+                        <li><a href="#">My photos</a></li>
+                        <li><a href="#">My favourites</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Login</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="hover" data-wrap="true">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img class="first-slide" src="images/carousel/carousel1.jpg" alt="First slide">
+        </div>
+        <div class="item">
+            <img class="second-slide" src="images/carousel/carousel2.jpg" alt="Second slide">
+        </div>
+        <div class="item">
+            <img class="third-slide" src="images/carousel/carousel3.jpg" alt="Third slide">
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div id="showImages">
+    <div class="row">
+        <div class="pic">
+            <a href="#">
+                <p><img src="images/pictures/pic1.jpg" alt="pic"></p>
+                <h3>标题</h3>
+                <p>正文</p>
+            </a>
+        </div>
+        <div class="pic">
+            <a href="#">
+                <p><img src="images/pictures/pic2.jpg" alt="pic"></p>
+                <h3>标题</h3>
+                <p>正文</p>
+            </a>
+        </div>
+        <div class="pic last">
+            <a href="#">
+                <p><img src="images/pictures/pic3.jpg" alt="pic"></p>
+                <h3>标题</h3>
+                <p>正文</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="pic">
+            <a href="#">
+                <p><img src="images/pictures/pic4.jpg" alt="pic"></p>
+                <h3>标题</h3>
+                <p>正文</p>
+            </a>
+        </div>
+        <div class="pic">
+            <a href="#">
+                <p><img src="images/pictures/pic5.jpg" alt="pic"></p>
+                <h3>标题</h3>
+                <p>正文</p>
+            </a>
+        </div>
+        <div class="pic last">
+            <a href="#">
+                <p><img src="images/pictures/pic6.jpg" alt="pic"></p>
+                <h3>标题</h3>
+                <p>正文</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div>
+    <footer>
+        <div class="container">
+            <div id="left">
+                <table>
+                    <tr>
+                        <td><a href="#">使用条款</a></td>
+                        <td><a href="#">关于</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">隐私保护</a></td>
+                        <td><a href="#">联系我们</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Cookie</a></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="right">
+                <a href="#"><img src="images/footer/QRcode.jpeg" alt="QRcode" height="120" width="120"></a>
+            </div>
+
+            <div id="middle">
+                <table>
+                    <tr>
+                        <td><a href="#"><img src="images/footer/github.png" alt="github" height="30" width="30"></a>
+                        </td>
+                        <td><a href="#"><img src="images/footer/shot.png" alt="shot" height="30" width="30"></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#"><img src="images/footer/tencent.png" alt="tencent" height="30" width="30"></a>
+                        </td>
+                        <td><a href="#"><img src="images/footer/weixin.png" alt="wechat" height="30" width="30"></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div>
+            <p id="foot">Copyright © 2019-2021 Web fundamental. All Rights Reserved. 备案号：19302010035</p>
+        </div>
+    </footer>
+</div>
+
+<div id="fixed">
+    <div id="to-top">
+        <img src="images/fixed/totop.png" alt="to-top" height="30" width="30">
+    </div>
+
+    <div id="refresh">
+        <img src="images/fixed/refresh.png" alt="refresh" height="30" width="30" onclick="alert('图片已更新')">
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="bootstrap-3.3.7-dist/js/jquery.min.js"><\/script>')</script>
+<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+<script src="bootstrap-3.3.7-dist/js/holder.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#to-top").hide();
+        $(function () {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 300) {
+                    $("#to-top").fadeIn(500);
+                } else {
+                    $("#to-top").fadeOut(500);
+                }
+            });
+            $("#to-top").click(function () {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 500);
+                return false;
+            });
+        });
+    });
+</script>
+</body>
+</html>
