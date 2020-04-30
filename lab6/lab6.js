@@ -9,11 +9,29 @@
     ①要求使用JS闭包的方式使得计数实现局部私有，不可以在全局区域声明计数变量。
     ②使用console.log打印计数即可，到达一分钟提前停止也需要console.log相应的提示语句。
 */
+function testTime() {
+    const interval = 5000;
+    const max_times = 10;
 
-function testTime(){
+    let currentMinute = new Date().getMinutes();
+    let count = 0;
+    let val = 1;
 
+    console.log(val);
+
+    let start = setInterval(function () {
+        count++;
+        if (count > max_times) {
+            clearInterval(start);
+        } else if (new Date().getMinutes() !== currentMinute) {
+            clearInterval(start);
+            console.log("program ends due to minute change");
+        } else {
+            val *= 2;
+            console.log(val);
+        }
+    }, interval);
 }
-// testTime();
 
 /*
 2.
@@ -23,8 +41,10 @@ function testTime(){
     ③邮箱字符串的正则匹配的理解需写入lab文档。
     ④telephone与mail均是字符串。
 */
-function testMail(telephone,mail) {
-
+function testMail(telephone, mail) {
+    let tel_flag = /^1[34578]\d{9}$/.test(telephone);
+    let mail_flag = /^\w+@[a-zA-Z0-9]{2,10}(?:\.[a-z]{2,6}){1,3}$/.test(mail);
+    console.log("The telephone is " + (tel_flag ? "right" : "wrong") + " the mail is " + (mail_flag ? "right" : "wrong") + "!");
 }
 
 /*
@@ -36,10 +56,36 @@ function testMail(telephone,mail) {
     ④对该函数中用的正则匹配的理解需写入lab文档。
     ⑤str为字符串。
 */
+
+//本来以为是匹配成功后就跳过匹配掉的单词
+/*function testRedundancy(str) {
+    let mySet = new Set();
+    let str_redundancy = /\b(\w+)\b \1/gi;
+    let temp;
+
+    while ((temp = str_redundancy.exec(str))) {
+        mySet.add(temp[0]);
+        if (mySet.size === 10) break;
+    }
+
+    console.log(mySet);
+}*/
+
 function testRedundancy(str) {
+    const reg= /(\b\w+\b)(?:\s\1)+\b/gi;
+    let mySet = new Set();
+    let pairs;
+    while ((pairs = reg.exec(str))) {
+        let array_temp = pairs[0].split(" ");
 
+        for (let i = 0; i < array_temp.length - 1; i++) {
+            mySet.add(array_temp[i] + " " + array_temp[i + 1]);
+        }
+    }
+
+    mySet = new Set(Array.from(mySet).sort().slice(0, 9));
+    console.log(mySet);
 }
-
 
 /*
 4.
@@ -56,7 +102,21 @@ function testRedundancy(str) {
     ①注意联系生活，并注意观察我给的上述例子。
 */
 function testKeyBoard(wantInput, actualInput) {
+    let j = 0;
+    let set1 = new Set();
+    let set2 = new Set();
 
+    for (let i = 0; i < wantInput.length; i++) {
+        if (wantInput[i] !== actualInput[j]) {
+            if (!set2.has(wantInput[i].toUpperCase()))
+                set1.add(wantInput[i].toUpperCase());
+        } else {
+            set1.delete(wantInput[i].toUpperCase());
+            set2.add(wantInput[i].toUpperCase());
+            j++;
+        }
+    }
+    console.log(set1);
 }
 
 /*
@@ -72,7 +132,21 @@ function testKeyBoard(wantInput, actualInput) {
     ⑤str为字符串。
 */
 function testSpecialReverse(str) {
+    let reversedString = "";
+    let words = str.split(" ");
+
+    for (let sequence = 0; sequence < words.length - 1; sequence++) {
+        let reversedSequence = words.length - sequence - 1;
+        if (words[reversedSequence] !== "") {
+            reversedString += words[reversedSequence] + " ";
+        }
+    }
+    reversedString += words[0];
+
+    console.log(reversedString);
 }
+
+
 
 /*
 6.
@@ -90,8 +164,18 @@ function testSpecialReverse(str) {
 */
 
 function twoSum(nums, target) {
-}
+    let map = new Map();
 
+    for (let i = 0; i < nums.length; i++) {
+        map.set(nums[i], i);
+        if (map.has(target - nums[i])) {
+            let pair = [];
+            pair.push(map.get(target - nums[i]));
+            pair.push(i);
+            console.log(pair);
+        }
+    }
+}
 
 /*
 7.
@@ -105,6 +189,20 @@ function twoSum(nums, target) {
     ⑤str为字符串。
 */
 function lengthOfLongestSubstring(str) {
+    let map = new Map();
+    let max_length = 0;
+    let temp = 0;
+    for (let i = 0; i < str.length; i++) {
+
+        if (map.has(str[i])) {
+            temp = (temp > i - 2 - map.get(str[i])) ? i - map.get(str[i]) : temp + 1;
+        } else {
+            temp++;
+        }
+        max_length = (temp > max_length) ? temp : max_length;
+        map.set(str[i], i);
+    }
+    console.log(max_length);
 }
 
 /*
@@ -119,3 +217,61 @@ function lengthOfLongestSubstring(str) {
 function Country() {
     this.name = "国家";
 }
+
+function DevelopingCountry() {
+    Country.call(this);
+    this.name = "发展中国家";
+}
+
+DevelopingCountry.prototype.sayHi = function () {
+    console.log("Hi,i am a developing country");
+};
+
+function PoorCountry() {
+    this.name = "贫穷国家";
+}
+
+PoorCountry.prototype = new Country();
+PoorCountry.prototype.saySad = function () {
+    console.log("I am a sad poor country.");
+};
+
+function DevelopedCountry() {
+    Country.call(this);
+}
+
+DevelopedCountry.prototype = Object.create(Country.prototype, {
+    name: {
+        value: "发达国家"
+    }
+});
+DevelopedCountry.prototype.constructor = DevelopedCountry;
+DevelopedCountry.prototype.sayHappy = function () {
+    console.log("I am a Happy developed country.");
+};
+
+function test(){
+    //2
+    testMail("15821920957", "15821920957@gmail.com");
+    testMail("11111111111", "15821920957@gmail.com");
+    testMail("15821920957", "15821920957gmail.com");
+    //3
+    testRedundancy("aa aa bb aa cc");
+    testRedundancy("aa Aa aA AA bb Bb bB BB cc Cc cC CC dd Dd dD DD");
+    //4
+    testKeyBoard("7z_This_is_a_testz","_hs_s_a_esz");
+    //5
+    testSpecialReverse("  hello  world!  ");
+    //6
+    twoSum([2, 7, 11, 15, 3, 6],9);
+    //7
+    lengthOfLongestSubstring("abcdebfgh");
+    //8
+    new DevelopingCountry().sayHi();
+    new PoorCountry().saySad();
+    new DevelopedCountry().sayHappy();
+    //1
+    testTime();
+}
+
+test();
