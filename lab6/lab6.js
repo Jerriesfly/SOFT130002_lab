@@ -83,7 +83,7 @@ function testRedundancy(str) {
         }
     }
 
-    mySet = new Set(Array.from(mySet).sort().slice(0, 9));
+    mySet = new Set(Array.from(mySet).sort().slice(0, 10));
     console.log(mySet);
 }
 
