@@ -16,9 +16,9 @@ for (let content of works){
     innerBox1.setAttribute("class","inner-box");
     let h3Element1 = document.createElement("h3");
     let h3Node1 = document.createTextNode(content.author + " ");
-    let sub = document.createElement("sub");
-    let subNode1 = document.createTextNode("lifetime:" + content.lifetime);
-    sub.appendChild(subNode1);
+    let h5 = document.createElement("h5");
+    let h5Node1 = document.createTextNode("lifetime:" + content.lifetime);
+    h5.appendChild(h5Node1);
     h3Element1.appendChild(h3Node1);
     h3Element1.appendChild(sub);
     innerBox1.appendChild(h3Element1);
