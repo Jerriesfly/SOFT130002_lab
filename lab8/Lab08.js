@@ -47,13 +47,7 @@ function setPage(pageNumber) {
     }, interval);
 
     buttonGroup[currentPage - 1].className = "";
-    if (pageNumber === 0) {
-        currentPage = buttonGroup.length;
-    } else if (pageNumber === buttonGroup.length + 1) {
-        currentPage = 1;
-    } else {
-        currentPage = pageNumber;
-    }
+    currentPage = (pageNumber + buttonGroup.length - 1) % buttonGroup.length + 1;
     buttonGroup[currentPage - 1].className = "on";
 }
 
