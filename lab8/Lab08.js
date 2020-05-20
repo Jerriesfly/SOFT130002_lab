@@ -122,11 +122,10 @@ for (let i = 0; i < buttonGroup.length; i++) {
  */
 /********************************************begin************************************/
 for (let td of tdGroup) {
-    td.setAttribute("contentEditable", "true");
-
     td.onclick = function () {
         if (selectedTd !== td) {
             this.style.backgroundColor = "rgb(240, 240, 240)";
+            td.setAttribute("contentEditable", "true");
 
             let index = window.getSelection();
             index.selectAllChildren(this);
@@ -138,6 +137,7 @@ for (let td of tdGroup) {
     td.onblur = function () {
         this.style.backgroundColor = "rgb(224, 224, 237)";
         selectedTd = undefined;
+        this.setAttribute("contentEditable", "true")
     };
 }
 /*********************************************end*************************************/
